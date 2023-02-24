@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c556d970f7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <div class="row mb-3">
+          <div class="col-6">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Enter a city"
+              autofocus="on"
+              autocomplete="off"
+              id="city-search"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="submit"
+              value="Search"
+              class="btn btn-outline-secondary"
+            />
+          </div>
+          <div class="col">
+            <i
+              title="Current location"
+              class="fa-solid fa-location-dot location-icon"
+            ></i>
+          </div>
+        </div>
+      </form>
+
+      <h1>Dubai</h1>
+      <div class="row">
+        <div class="col-6 currrent-day">
+          <div class="row">
+            <div class="col-4" id="day">
+              <h4></h4>
+            </div>
+            <div class="col-6" id="time">
+              <h4></h4>
+            </div>
+            <div class="col-6">
+              <h5></h5>
+            </div>
+          </div>
+          <div class="row mt-4 current-weather">
+            <div class="col-2" id="weather-emo">🌤</div>
+            <div class="col-3" id="current-temp">22°C</div>
+            <div class="col">
+              <button type="button" class="btn btn-light temp" id="celsius">
+                °C
+              </button>
+              <button type="button" class="btn btn-light temp" id="fahrenheit">
+                °F
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="weather-feeling">Feels like 19°C</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-6 details">Precipitation</div>
+            <div class="col-6 details">Humidity</div>
+            <div class="col-6 details">Extreme</div>
+            <div class="col-6 details" id="main-hum">68%</div>
+          </div>
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 details">Wind</div>
+            <div class="col-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 details" id="wind-speed">16km/h</div>
+            <div class="col-6"></div>
+          </div>
+        </div>
+        <div class="col-6 following-days p-3">
+          <div class="row new-day">
+            <div class="col-8">
+              Tuesday
+              <div class="col-6">18°C / 12°C</div>
+            </div>
+            <div class="col-4 emo">🌧</div>
+          </div>
+          <hr />
+          <div class="row new-day">
+            <div class="col-8">
+              Wednesday
+              <div class="col-6">20°C / 17°C</div>
+            </div>
+            <div class="col-4 emo">🌧</div>
+          </div>
+          <hr />
+          <div class="row new-day">
+            <div class="col-8">
+              Thursday
+              <div class="col-6">28°C / 19°C</div>
+            </div>
+            <div class="col-4 emo">🌤</div>
+          </div>
+          <hr />
+          <div class="row new-day">
+            <div class="col-8">
+              Friday
+              <div class="col-6">25°C / 18°C</div>
+            </div>
+            <div class="col-4 emo">🌧</div>
+          </div>
+          <hr />
+          <div class="row new-day">
+            <div class="col-8">
+              Saturday
+              <div class="col-6">23°C / 17°C</div>
+            </div>
+            <div class="col-4 emo">🌧</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">Coded by Wanaemi Amaegbe</div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
