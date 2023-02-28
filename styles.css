@@ -1,6 +1,9 @@
 body {
   background-image: url(images/sun.jpg);
 }
+ul {
+  padding-left: 0;
+}
 .container {
   background: linear-gradient(to bottom, #d1f0ee, #60afb8);
   max-width: 900px;
@@ -29,13 +32,18 @@ body {
   font-size: 35px;
   transition: all 200ms ease-in-out;
 }
+#weather-emo{
+  margin-top: -10px;
+  margin-right: 25px;
+}
 .location-icon:hover {
   color: #f8f9fa;
   cursor: pointer;
 }
-
 .details {
-  font-size: 20px;
+  font-size: 18px;
+  list-style: none;
+  line-height: 45px;
 }
 .foot {
   position: fixed;

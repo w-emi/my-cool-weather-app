@@ -63,7 +63,12 @@
             </div>
           </div>
           <div class="row mt-4 current-weather">
-            <div class="col-2" id="weather-emo">🌤</div>
+            <div class="col-2" id="weather-emo">
+              <img
+                src="https://lh3.googleusercontent.com/KECGrEjZC9ao5xs2n1DJ32q8GXBOU2lz-jwmlGFY72MTac4A1va-Dwo_8fxDdQ7G4OBziTPOpydtzQ4bNd19yt5LkwAIFBExaavakk0"
+                alt="Weather image"
+              />
+            </div>
             <div class="col-3" id="current-temp">22°C</div>
             <div class="col">
               <button type="button" class="btn btn-light temp" id="celsius">
@@ -75,25 +80,15 @@
             </div>
           </div>
           <div class="row">
-            <div class="col" id="weather-feeling">Feels like 19°C</div>
+            <div class="col" id="weather-feeling"><em>Feels like 19°C</em></div>
           </div>
           <hr />
-          <div class="row">
-            <div class="col-6 details">Precipitation</div>
-            <div class="col-6 details">Humidity</div>
-            <div class="col-6 details">Extreme</div>
-            <div class="col-6 details" id="main-hum">68%</div>
-          </div>
-          <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 details">Wind</div>
-            <div class="col-6"></div>
-          </div>
-          <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 details" id="wind-speed">16km/h</div>
-            <div class="col-6"></div>
-          </div>
+          <ul>
+            <li class="details">Precipitation: <span>Extreme</span></li>
+            <li class="details">Humidity: <span id="main-hum">68%</span></li>
+            <li class="details">Wind: <span id="wind-speed">16km/h</span></li>
+          </ul>
+          <hr />
         </div>
         <div class="col-6 following-days p-3">
           <div class="row new-day">
@@ -137,12 +132,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="foot">
-      Open source code by
-      <a href="https://github.com/w-emi/my-cool-weather-app" target="_blank"
-        >Wanaemi Amaegbe</a
-      >
+      <div class="foot">
+        Open source code by
+        <a href="https://github.com/w-emi/my-cool-weather-app" target="_blank"
+          >Wanaemi Amaegbe</a
+        >
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
