@@ -1,21 +1,21 @@
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let feelsLike = Math.round(response.data.main.feels_like);
-  let cityName = response.data.name;
-  let humidity = response.data.main.humidity;
-  let windSpeed = Math.round(response.data.wind.speed);
-
+  console.log(response);
+  console.log(response.data.weather[0].main);
   let headWeather = document.querySelector("#current-temp");
   let feelWeather = document.querySelector("#weather-feeling");
+  let currentDescripton = document.querySelector("#description em");
   let heading = document.querySelector("h1");
   let weatherHumidity = document.querySelector("#main-hum");
   let weatherWind = document.querySelector("#wind-speed");
 
-  heading.innerHTML = cityName;
-  headWeather.innerHTML = `${temperature}°C`;
-  feelWeather.innerHTML = `Feels like ${feelsLike}°C`;
-  weatherHumidity.innerHTML = `${humidity}%`;
-  weatherWind.innerHTML = `${windSpeed}km/h`;
+  heading.innerHTML = response.data.name;
+  headWeather.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  feelWeather.innerHTML = `Feels like ${Math.round(
+    response.data.main.feels_like
+  )}°C`;
+  currentDescripton.innerHTML = response.data.weather[0].main;
+  weatherHumidity.innerHTML = `${response.data.main.humidity}%`;
+  weatherWind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
 }
 function searchCity(event) {
   event.preventDefault();

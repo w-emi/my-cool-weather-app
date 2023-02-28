@@ -17,10 +17,14 @@ ul {
   border-radius: 50%;
   padding: 5px 10px;
 }
-.current-weather {
+.current-weather,
+#description em {
   height: 60px;
   font-size: 25px;
   font-weight: bold;
+}
+h5 {
+  margin-top: 10px;
 }
 .following-days {
   background: #0f0f10;
@@ -32,7 +36,7 @@ ul {
   font-size: 35px;
   transition: all 200ms ease-in-out;
 }
-#weather-emo{
+#weather-emo {
   margin-top: -10px;
   margin-right: 25px;
 }
