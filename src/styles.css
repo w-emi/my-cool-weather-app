@@ -47,6 +47,9 @@ ul {
   list-style: none;
   line-height: 45px;
 }
+.current-weather .active {
+  cursor: default;
+}
 .foot {
   position: relative;
   top: 70px;
