@@ -24,15 +24,17 @@ function showTemperature(response) {
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].main);
 }
-function searchCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-search");
-  let city = cityInput.value;
+function callCity(city) {
   let units = "metric";
   let apiKey = "6a03f7bed78b1800fab711af26fd3f98";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
+}
+function searchCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-search");
+  callCity(cityInput.value);
 }
 function celsiusToFahrenheit(celsius) {
   return (celsius * 9) / 5 + 32;
@@ -105,13 +107,14 @@ if (minutes < 10) {
 
 //date and time settings
 let weekDay = document.querySelector("#day h4");
-let weekDate = document.querySelector("h5");
+let weekDate = document.querySelector("#exact-date h4");
 let time = document.querySelector("#time h4");
 
 weekDay.innerHTML = day;
 weekDate.innerHTML = `${date}/${month}`;
 time.innerHTML = `${hour}:${minutes}`;
 
+callCity("Dubai");
 //event listeners
 let searchForm = document.querySelector("#search-form");
 let celciusButt = document.querySelector("#celsius");
