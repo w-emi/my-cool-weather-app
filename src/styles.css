@@ -7,7 +7,8 @@ ul {
 .container {
   background: linear-gradient(to bottom, #d1f0ee, #60afb8);
   max-width: 900px;
-  margin: 50px auto;
+  max-height: 520px;
+  margin: 30px auto;
   padding: 25px 50px;
   border-radius: 15px;
   box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.3);
@@ -27,6 +28,7 @@ ul {
   background: #0f0f10;
   color: aliceblue;
   border-radius: 15px;
+  max-height: 300px;
 }
 .emo,
 .location-icon {
@@ -52,8 +54,7 @@ ul {
 }
 .foot {
   position: relative;
-  top: 70px;
-  left: 25px;
-  text-align: center;
+  top: 15px;
+  /* text-align: center; */
   font-family: monospace;
 }
