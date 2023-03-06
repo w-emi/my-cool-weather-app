@@ -7,8 +7,8 @@ ul {
 .container {
   background: linear-gradient(to bottom, #d1f0ee, #60afb8);
   max-width: 900px;
-  margin: 90px auto;
-  padding: 35px 50px;
+  margin: 50px auto;
+  padding: 25px 50px;
   border-radius: 15px;
   box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.3);
 }
@@ -16,15 +16,12 @@ ul {
   border: none;
   border-radius: 50%;
   padding: 5px 10px;
+  margin-top: 0px;
 }
-.current-weather,
-#description em {
+.current-weather {
   height: 60px;
   font-size: 25px;
   font-weight: bold;
-}
-h5 {
-  margin-top: 10px;
 }
 .following-days {
   background: #0f0f10;
@@ -36,10 +33,11 @@ h5 {
   font-size: 35px;
   transition: all 200ms ease-in-out;
 }
-#weather-emo {
-  margin-top: -10px;
-  margin-right: 25px;
+.weather-emo {
+  margin-top: -30px;
+  margin-left: -10px;
 }
+
 .location-icon:hover {
   color: #f8f9fa;
   cursor: pointer;
@@ -50,9 +48,9 @@ h5 {
   line-height: 45px;
 }
 .foot {
-  position: fixed;
-  top: 95%;
-  left: 40%;
+  position: relative;
+  top: 70px;
+  left: 25px;
   text-align: center;
   font-family: monospace;
 }

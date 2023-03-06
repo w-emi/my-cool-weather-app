@@ -7,6 +7,7 @@ function showTemperature(response) {
   let heading = document.querySelector("h1");
   let weatherHumidity = document.querySelector("#main-hum");
   let weatherWind = document.querySelector("#wind-speed");
+  let weatherIcon = document.querySelector("#weather-icon");
 
   heading.innerHTML = response.data.name;
   headWeather.innerHTML = `${Math.round(response.data.main.temp)}°C`;
@@ -16,6 +17,12 @@ function showTemperature(response) {
   currentDescripton.innerHTML = response.data.weather[0].main;
   weatherHumidity.innerHTML = `${response.data.main.humidity}%`;
   weatherWind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+  let iconId = response.data.weather[0].icon;
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconId}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].main);
 }
 function searchCity(event) {
   event.preventDefault();
@@ -88,6 +95,9 @@ let month = months[today.getMonth()];
 let day = days[today.getDay()];
 let date = today.getDate();
 let hour = today.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let minutes = today.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
