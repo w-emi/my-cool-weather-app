@@ -1,4 +1,22 @@
 //functions
+function showForecast() {
+  let myForecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row"> `;
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-4 new-day">
+        <div>${day}</div>
+        <div class="emo">🌤</div>
+        <div>28° <span class="min-temperature">19°</span></div>
+      </div> 
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  myForecast.innerHTML = forecastHTML;
+}
 function showTemperature(response) {
   let headWeather = document.querySelector("#current-temp");
   let feelWeather = document.querySelector("#weather-feeling");
@@ -124,3 +142,4 @@ myLocation.addEventListener("click", currentLocation);
 
 //onload calls
 callCity("Dubai");
+showForecast();
