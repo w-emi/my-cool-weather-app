@@ -20,86 +20,91 @@
   </head>
   <body>
     <div class="container">
-      <form id="search-form">
-        <div class="row mb-3">
-          <div class="col-6">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Enter a city"
-              autofocus="on"
-              autocomplete="off"
-              id="city-search"
-            />
-          </div>
-          <div class="col">
-            <input
-              type="submit"
-              value="Search"
-              class="btn btn-outline-secondary"
-            />
-          </div>
-          <div class="col">
-            <i
-              title="Current location"
-              class="fa-solid fa-location-dot location-icon"
-            ></i>
-          </div>
-        </div>
-      </form>
-
-      <h1>Dubai</h1>
-      <div class="row">
-        <div class="col-6 currrent-day">
-          <div class="row">
-            <div class="col-4" id="day">
-              <h4></h4>
+      <div class="weather-app">
+        <form id="search-form">
+          <div class="row mb-3">
+            <div class="col-6">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Enter a city"
+                autofocus="on"
+                autocomplete="off"
+                id="city-search"
+              />
             </div>
-            <div class="col-8" id="exact-date">
-              <h4></h4>
-            </div>
-            <div class="col" id="time">
-              <h4></h4>
-            </div>
-            <div class="col-12" id="description"><em></em></div>
-          </div>
-          <div class="row mt-4 current-weather">
-            <div class="col-3 weather-emo">
-              <img src="" alt="" id="weather-icon" />
-            </div>
-            <div class="col-3" id="current-temp">22°C</div>
             <div class="col">
-              <button
-                type="button"
-                class="btn btn-light temp active"
-                id="celsius"
-              >
-                °C
-              </button>
-              <button type="button" class="btn btn-light temp" id="fahrenheit">
-                °F
-              </button>
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-outline-secondary"
+              />
+            </div>
+            <div class="col">
+              <i
+                title="Current location"
+                class="fa-solid fa-location-dot location-icon"
+              ></i>
             </div>
           </div>
-          <div class="row">
-            <div class="col" id="weather-feeling"><em>Feels like 19°C</em></div>
+        </form>
+
+        <h1>Dubai</h1>
+        <div class="row">
+          <div class="col-6 currrent-day">
+            <div class="row">
+              <div class="col-5 tint" id="day">
+                <h4></h4>
+              </div>
+              <div class="col-7 tint" id="exact-date">
+                <h4></h4>
+              </div>
+              <div class="col tint" id="time">
+                <h4></h4>
+              </div>
+              <div class="col-12" id="description"><em></em></div>
+            </div>
+            <div class="row mt-4 current-weather">
+              <div class="col-3 weather-emo">
+                <img src="" alt="" id="weather-icon" />
+              </div>
+              <div class="col">
+                <div id="current-temp"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" id="weather-feeling">
+                <em>Feels like 19°C</em>
+              </div>
+            </div>
+            <hr />
+            <ul>
+              <li class="details">
+                <span class="tint">Humidity: </span>
+                <span class="data" id="main-hum"></span>
+              </li>
+              <li class="details">
+                <span class="tint">Wind: </span>
+                <span class="data" id="wind-speed"></span>
+              </li>
+            </ul>
           </div>
-          <hr />
-          <ul>
-            <li class="details">Precipitation: <span>Extreme</span></li>
-            <li class="details">Humidity: <span id="main-hum">68%</span></li>
-            <li class="details">Wind: <span id="wind-speed">16km/h</span></li>
-          </ul>
+          <div class="col-6 following-days p-3" id="forecast"></div>
         </div>
-        <div class="col-6 following-days p-3" id="forecast"></div>
+        <div class="foot">
+          Project by
+          <a href="https://github.com/w-emi/" target="_blank">Wanaemi Amaegbe</a
+          >. It is open sourced on
+          <a href="https://github.com/w-emi/my-cool-weather-app" target="_blank"
+            >Github</a
+          >
+          and hosted on
+          <a href="https://github.com/w-emi/my-cool-weather-app" target="_blank"
+            >Netlify</a
+          >
+        </div>
       </div>
-      <div class="foot">
-        Open source code by
-        <a href="https://github.com/w-emi/my-cool-weather-app" target="_blank"
-          >Wanaemi Amaegbe</a
-        >
-      </div>
+      <script src="src/index.js"></script>
     </div>
-    <script src="src/index.js"></script>
   </body>
 </html>

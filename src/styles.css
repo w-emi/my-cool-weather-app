@@ -1,13 +1,25 @@
 body {
-  background-image: url(images/sun.jpg);
+  font-family: "Crimson Text variant0", Tofu;
+  background: antiquewhite;
+}
+h1 {
+  font-size: 55px;
 }
 ul {
   padding-left: 0;
 }
-.container {
-  background: linear-gradient(to bottom, #d1f0ee, #60afb8);
-  max-width: 900px;
-  max-height: 520px;
+.tint {
+  opacity: 0.5;
+}
+.data {
+  font-size: 18px;
+  font-style: italic;
+  color: antiquewhite;
+}
+.weather-app {
+  background: linear-gradient(to bottom, #d1f0ee, #168b9a);
+  max-width: 800px;
+  max-height: 480px;
   margin: 30px auto;
   padding: 25px 50px;
   border-radius: 15px;
@@ -24,10 +36,11 @@ ul {
   font-size: 25px;
   font-weight: bold;
 }
+
 .following-days {
   text-align: center;
-  background: #0f0f10;
-  color: aliceblue;
+  background: #60afb8;
+  color: antiquewhite;
   border-radius: 15px;
   max-height: 300px;
 }
@@ -39,8 +52,6 @@ ul {
   opacity: 0.6;
 }
 .following-icons {
-  background: #8ac7cc;
-  border-radius: 15px;
   width: 55px;
 }
 .location-icon {
@@ -57,16 +68,18 @@ ul {
   cursor: pointer;
 }
 .details {
-  font-size: 18px;
+  font-size: 20px;
   list-style: none;
-  line-height: 45px;
+  line-height: 35px;
 }
 .current-weather .active {
   cursor: default;
 }
 .foot {
   position: relative;
-  top: 15px;
-  /* text-align: center; */
+  top: 40px;
   font-family: monospace;
+}
+.foot a {
+  color: #168b9a;
 }
