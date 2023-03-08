@@ -25,10 +25,14 @@ ul {
   font-weight: bold;
 }
 .following-days {
+  text-align: center;
   background: #0f0f10;
   color: aliceblue;
   border-radius: 15px;
   max-height: 300px;
+}
+.min-temperature {
+  opacity: 0.6;
 }
 .emo,
 .location-icon {
