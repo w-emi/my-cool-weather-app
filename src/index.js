@@ -1,21 +1,42 @@
 //functions
-function showForecast() {
+function formatDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+}
+function showForecast(response) {
+  let dailyForecast = response.data.daily;
   let myForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row"> `;
-  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-4 new-day">
-        <div>${day}</div>
-        <div class="emo">🌤</div>
-        <div>28° <span class="min-temperature">19°</span></div>
+  // let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-4 new-day">
+        <div>${formatDays(forecastDay.dt)}</div>
+        <img src="https://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="" class="following-icons"/>
+        <div>${Math.round(
+          forecastDay.temp.max
+        )}° <span class="min-temperature">${Math.round(
+          forecastDay.temp.min
+        )}°</span></div>
       </div> 
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   myForecast.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let units = "metric";
+  let apiKey = "cf6b50b908fa2e0baca3eed8a569a5f6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
 }
 function showTemperature(response) {
   let headWeather = document.querySelector("#current-temp");
@@ -42,6 +63,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${iconId}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 function callCity(city) {
   let units = "metric";
@@ -142,4 +165,3 @@ myLocation.addEventListener("click", currentLocation);
 
 //onload calls
 callCity("Dubai");
-showForecast();

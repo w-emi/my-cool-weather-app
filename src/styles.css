@@ -38,7 +38,11 @@ ul {
 .min-temperature {
   opacity: 0.6;
 }
-.emo,
+.following-icons {
+  background: #8ac7cc;
+  border-radius: 15px;
+  width: 55px;
+}
 .location-icon {
   font-size: 35px;
   transition: all 200ms ease-in-out;
